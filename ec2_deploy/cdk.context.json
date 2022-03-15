@@ -1,0 +1,52 @@
+{
+  "vpc-provider:account=033533902081:filter.vpc-id=vpc-af9c5bd2:region=us-east-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-af9c5bd2",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-17f64736",
+            "cidr": "172.31.80.0/20",
+            "availabilityZone": "us-east-1a",
+            "routeTableId": "rtb-0a1f5d74"
+          },
+          {
+            "subnetId": "subnet-81f08bcc",
+            "cidr": "172.31.16.0/20",
+            "availabilityZone": "us-east-1b",
+            "routeTableId": "rtb-0a1f5d74"
+          },
+          {
+            "subnetId": "subnet-682c9837",
+            "cidr": "172.31.32.0/20",
+            "availabilityZone": "us-east-1c",
+            "routeTableId": "rtb-0a1f5d74"
+          },
+          {
+            "subnetId": "subnet-03f55e65",
+            "cidr": "172.31.0.0/20",
+            "availabilityZone": "us-east-1d",
+            "routeTableId": "rtb-0a1f5d74"
+          },
+          {
+            "subnetId": "subnet-7ebb454f",
+            "cidr": "172.31.48.0/20",
+            "availabilityZone": "us-east-1e",
+            "routeTableId": "rtb-0a1f5d74"
+          },
+          {
+            "subnetId": "subnet-2bfd9025",
+            "cidr": "172.31.64.0/20",
+            "availabilityZone": "us-east-1f",
+            "routeTableId": "rtb-0a1f5d74"
+          }
+        ]
+      }
+    ]
+  },
+  "ami:account=033533902081:filters.image-type.0=machine:filters.name.0=ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20211129:filters.state.0=available:region=us-east-1": "ami-0ce36434daf147678"
+}

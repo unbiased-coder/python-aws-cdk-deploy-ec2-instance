@@ -1,0 +1,88 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Ec2DeployStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "Ec2DeployStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "Ec2DeployStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://033533902081/us-east-1",
+      "properties": {
+        "templateFile": "Ec2DeployStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::033533902081:role/cdk-hnb659fds-deploy-role-033533902081-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::033533902081:role/cdk-hnb659fds-cfn-exec-role-033533902081-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-033533902081-us-east-1/4d58d5324b774aa150b9bf2446b0431c51232dff8dc0c829da168fa1048bce17.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "Ec2DeployStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::033533902081:role/cdk-hnb659fds-lookup-role-033533902081-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "Ec2DeployStack.assets"
+      ],
+      "metadata": {
+        "/Ec2DeployStack/ec2-sec-grp/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ec2secgrp06AACBBC"
+          }
+        ],
+        "/Ec2DeployStack/ec2_inst/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ec2instInstanceRole6A537961"
+          }
+        ],
+        "/Ec2DeployStack/ec2_inst/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ec2instInstanceProfile7D41EF08"
+          }
+        ],
+        "/Ec2DeployStack/ec2_inst/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ec2inst429A51B9"
+          }
+        ],
+        "/Ec2DeployStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/Ec2DeployStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Ec2DeployStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Ec2DeployStack"
+    }
+  }
+}
